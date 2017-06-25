@@ -1,0 +1,12 @@
+---
+- name: restart atop
+  service:
+    name: "{{ atop_service }}"
+    state: restarted
+
+  # Fixes: "To prevent: Warning: Unit file of atop.service changed on disk, 'systemctl daemon-reload' recommended."
+  # After modifying an init script or systemd service file
+- name: reload systemd
+  become: yes
+  command: systemctl daemon-reload
+
