@@ -4,13 +4,13 @@ Ansible Role atop
 This role installs and configures atop, a process periodically saving a top like snapshot.
 
 What is `atop`?
-===============
+---------------
 `atop` which aggregates process statistics of all running processes and saves it to `/var/log/atop/${timestamp}.log`. The logs can later be viewed in a `top` style way. You can use it to find the exact process that "caused high load last sunday".
 
 **Upstream:** [atoptool.nl](http://www.atoptool.nl/)
 
 Example Play
-============
+------------
 
 ```yaml
 - hosts: foo
@@ -19,6 +19,7 @@ Example Play
   roles:
     - blunix.role-atop
 ```
+
 
 `atop` Usage
 ============
