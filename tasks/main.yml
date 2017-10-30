@@ -1,28 +1,4 @@
----
-- name: install the atop package
-  apt:
-    pkg: atop
-    state: installed
-    update_cache: no
-    install_recommends: no
-
-- name: template /etc/default/atop file
-  template:
-    src: etc-default-atop.j2
-    dest: /etc/default/atop
-    owner: root
-    group: root
-    mode: 640
-  notify:
-    - restart atop
-
-- name: template /etc/init.d/atop file
-  template:
-    src: etc-initd-atop.j2
-    dest: /etc/init.d/atop
-    owner: root
-    group: root
-    mode: 750
-  notify:
-    - reload systemd
-    - restart atop
+- include: atop.yml
+  when: atop_enabled
+  tags:
+    - atop

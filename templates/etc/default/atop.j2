@@ -1,9 +1,7 @@
 {{ ansible_managed | comment }}
-#
-# /etc/default/atop
 
 # How often to log the current state in seconds
-INTERVAL="{{ atop_log_interval | default('600') }}"
+INTERVAL="{{ atop_log_interval | default(600) }}"
 
 # Directory where to write logfiles
 LOGPATH="{{ atop_log_dir | default('/var/log/atop') }}"
