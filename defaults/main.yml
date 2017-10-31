@@ -1,15 +1,3 @@
----
-# Logfile age in days, patches the init script as descirbed in
-# https://serverfault.com/questions/775540/how-to-make-atop-create-less-log-files
-# Default: 28
+atop_enabled: no
 atop_log_age: 14
-
-# Interval in which data is saved in seconds
-# Default: 600
-atop_log_interval: 60
-
-# Directory where atop logfiles will be saved
-atop_log_dir: /var/log/atop
-
-# Name of the atop daemon service
 atop_service: atop

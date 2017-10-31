@@ -10,5 +10,7 @@ galaxy_info:
     - jessie
 
   galaxy_tags:
-    - blunix
-    - atop
+  - blunix
+  - atop
+
+dependencies: []
