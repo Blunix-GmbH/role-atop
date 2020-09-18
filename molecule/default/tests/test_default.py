@@ -7,4 +7,4 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_package(host):
-    assert not host.file('/usr/bin/atop').exists
+    assert host.file('/usr/bin/atop').exists

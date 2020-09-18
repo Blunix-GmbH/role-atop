@@ -1,4 +1,13 @@
-- include: atop.yml
-  when: atop_enabled
-  tags:
-    - atop
+- name: install atop
+  apt:
+    name: atop
+    state: present
+
+- name: template /etc/default/atop file
+  template:
+    src: etc/default/atop.j2
+    dest: /etc/default/atop
+    owner: root
+    group: root
+    mode: 0640
+  notify: restart atop
